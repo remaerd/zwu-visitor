@@ -37,10 +37,10 @@
 
 ### API List
 
-| API Name              | 功能描述     | 接口返回值      |
-| --------------------- | ------------ | --------------- |
-| getAllApplicationById | 获取所有请求 | applicationList |
-| createApplicationById | 添加访客申请 | code            |
-| deleteApplicationById | 撤销访客申请 | code            |
-| updateApplicationById | 修改访客申请 | code            |
-| seleteApplicationById | 搜索访客申请 | applicationList |
+| API Name              | 功能描述     | 接口返回类型 | 接口返回值      |
+| --------------------- | ------------ | ------------ | --------------- |
+| getAllApplicationById | 获取所有请求 | list         | applicationList |
+| createApplicationById | 添加访客申请 | string       | code            |
+| deleteApplicationById | 撤销访客申请 | string       | code            |
+| updateApplicationById | 修改访客申请 | string       | code            |
+| seleteApplicationById | 搜索访客申请 | list         | applicationList |
