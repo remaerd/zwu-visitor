@@ -4,8 +4,8 @@ const router = express.Router();
 const api = require('./api');
 
 router.get('/getAllApplicationById', (req, res, next) => {
-  api.getAllApplicationById(req, res, next);
-});
-
-
-module.exports = router;
+    api.getAllApplicationById(req, res, next);
+  });
+  
+  
+  module.exports = router;

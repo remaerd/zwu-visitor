@@ -4,22 +4,25 @@ const mysql = require('mysql');
 const dbConfig = require('./db');
 //const sqlMap
 const sqlMap = require('./sqlMap');
-//const pool
-const pool = mysql.createPool(dbConfig.mysql);
+//const connection
+const connection = mysql.createConnection(dbConfig)
 
 //
 module.exports = {
   //getAllApplicationById
   getAllApplicationById: function (req, res, next) {
-    pool.getConnection(function (err, connection) {
-      connection.query(sqlMap.getAllApplicationById, function (err, result) {
-        if (err) {
-          console.log(err);
-          return;
+    connection.connect();
+    let querySql = sqlMap.getAllApplicationById;
+    connection.query(querySql, function(err,result){
+      if(err){
+        console.log('error');
+      } else{
+        let data;
+        if(result.length) {
+          data = result;
         }
-        res.json(result);
-        connection.release();
-      });
-    });
+        res.send(data);
+      }
+    })
   }
 };
