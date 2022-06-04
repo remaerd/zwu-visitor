@@ -37,10 +37,14 @@
 
 ### API List
 
-| API Name              | 功能描述     | 接口返回类型 | 接口返回值      |
-| --------------------- | ------------ | ------------ | --------------- |
-| getAllApplicationById | 获取所有请求 | list         | applicationList |
-| createApplicationById | 添加访客申请 | string       | code            |
-| deleteApplicationById | 撤销访客申请 | string       | code            |
-| updateApplicationById | 修改访客申请 | string       | code            |
-| seleteApplicationById | 搜索访客申请 | list         | applicationList |
+| 方式     | 接口地址                               | 功能描述    | 接口返回类型   | 接口返回值        |
+| ------- | ------------------------------------- | ---------- | ------------ | --------------- |
+| GET     | /reviewers/{:departmentId}            | 获取审批人   | array        | 审批人列表       |
+| POST    | /reviewers/                           | 新建审批人   | string       | 结果代码         |
+| PUT     | /reviewers/{id}                       | 更改审批人   | string       | 结果代码         |
+| DELETE  | /reviewers/{:reviewerId}              | 删除审批人   | string       | 结果代码         |
+| GET     | /reviewers/{:reviewerId}/applications | 删除审批人   | string       | 结果代码         |
+| POST    | /applications/                        | 添加访客申请 | string       | code            |
+| DELETE  | /applications/{id}                    | 撤销访客申请 | string       | code            |
+| PUT     | /applications/{id}                    | 修改访客申请 | string       | code            |
+| GET     | /applications/{id}/validate           | 搜索访客申请 | list         | applicationList |
