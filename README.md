@@ -25,8 +25,8 @@
 | PUT     | /reviewers/{id}                        | 更改审批人信息      | string       | 结果代码   |
 | DELETE  | /reviewers/{:reviewerId}               | 删除审批人         | string       | 结果代码   |
 | GET     | /reviewers/{:reviewerId}/applications  | 获得审批人相关的访客 | string       | 申请列表   |
+| GET     | /reviewers/{:reviewerId}/              | 获取审批人通行证    | object       | 通行资格   |
 | GET     | /applications/{id}                     | 获取访客通行证      | object       | 通行资格   |
-| GET     | /reviewers/{:reviewerId}/applications/ | 获取审批人通行证    | object       | 通行资格   |
 | POST    | /applications/                         | 添加访客申请       | string       | 结果代码    |
 | PUT     | /applications/{id}/validate            | 审批人审批通行资格  | string       | 结果代码    |
 | DELETE  | /applications/{id}                     | 撤销访客申请       | string       | 结果代码    |
@@ -53,7 +53,9 @@
   "name":"张三", // 姓名
   "tel":13800000000, // 联系
   "IdNumber":"331081200012120059", // 身份证
+  "validationSecret":"0b23ac80-1772-4f66-89d5-354e5c2e0898", // 用于生成访客二维码的 UUID
   "vehicleNumber":“浙BBB111”
+  
 }
 ```
 
@@ -69,5 +71,6 @@
   "startTime":"2022-05-31 08:00:00", // 访问开始时间
   "endTime":"2022-06-01 18:00:00", // 访问结束时间
   "vehicleNumber":“浙BBB111”
+  "validationSecret":"0b23ac80-1772-4f66-89d5-354e5c2e0898", // 用于生成访客二维码的 UUID
 }
 ```
