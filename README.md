@@ -16,23 +16,6 @@
 
 ### API List
 
-<<<<<<< Updated upstream
-| 方式     | 接口地址                                | 功能描述          | 接口返回类型   | 接口返回值  |
-| ------- | -------------------------------------- | ---------------- | ------------ | --------- |
-| POST    | /departments/                          | 创建新部门         | array        | 部门列表   |
-| PUT     | /departments/{:departmentId}           | 更新部门信息       | string       | 结果代码   |
-| DELETE  | /departments/{:departmentId}           | 删除部门          | string        | 结果代码  |
-| GET     | /departments/{:departmentId}/reviewers | 获取部门的审批人    | array        | 审批人列表 |
-| POST    | /reviewers/                            | 新建审批人         | string       | 结果代码   |
-| PUT     | /reviewers/{id}                        | 更改审批人信息      | string       | 结果代码   |
-| DELETE  | /reviewers/{:reviewerId}               | 删除审批人         | string       | 结果代码   |
-| GET     | /reviewers/{:reviewerId}/applications  | 获得审批人相关的访客 | string       | 申请列表   |
-| GET     | /reviewers/{:reviewerId}/              | 获取审批人通行证    | object       | 通行资格   |
-| GET     | /applications/{id}                     | 获取访客通行证      | object       | 通行资格   |
-| POST    | /applications/                         | 添加访客申请       | string       | 结果代码    |
-| PUT     | /applications/{id}/validate            | 审批人审批通行资格  | string       | 结果代码    |
-| DELETE  | /applications/{id}                     | 撤销访客申请       | string       | 结果代码    |
-=======
 | 方式   | 接口地址                               | 功能描述             | 接口返回类型 | 接口返回值 |
 | ------ | -------------------------------------- | -------------------- | ------------ | ---------- |
 | POST   | /departments/                          | 创建新部门           | array        | 部门列表   |
@@ -43,12 +26,11 @@
 | PUT    | /reviewers/{id}                        | 更改审批人信息       | string       | 结果代码   |
 | DELETE | /reviewers/{:reviewerId}               | 删除审批人           | string       | 结果代码   |
 | GET    | /reviewers/{:reviewerId}/applications  | 获得审批人相关的访客 | string       | 申请列表   |
+| GET    | /reviewers/{:reviewerId}/              | 获取审批人通行证     | object       | 通行资格   |
 | GET    | /applications/{id}                     | 获取访客通行证       | object       | 通行资格   |
-| GET    | /reviewers/{:reviewerId}/applications/ | 获取审批人通行证     | object       | 通行资格   |
 | POST   | /applications/                         | 添加访客申请         | string       | 结果代码   |
 | PUT    | /applications/{id}/validate            | 审批人审批通行资格   | string       | 结果代码   |
 | DELETE | /applications/{id}                     | 撤销访客申请         | string       | 结果代码   |
->>>>>>> Stashed changes
 
 ### 部门（departments）
 
@@ -74,7 +56,7 @@
   "IdNumber":"331081200012120059", // 身份证
   "validationSecret":"0b23ac80-1772-4f66-89d5-354e5c2e0898", // 用于生成访客二维码的 UUID
   "vehicleNumber":“浙BBB111”
-  
+
 }
 ```
 
