@@ -29,8 +29,9 @@
 | GET    | /reviewers/{:reviewerId}/              | 获取审批人通行证     | object       | 通行资格   |
 | GET    | /applications/{id}                     | 获取访客通行证       | object       | 通行资格   |
 | POST   | /applications/                         | 添加访客申请         | string       | 结果代码   |
-| PUT    | /applications/{id}/validate            | 审批人审批通行资格   | string       | 结果代码   |
+| PUT    | /applications/{id}/review              | 审批人审批通行资格   | string       | 结果代码   |
 | DELETE | /applications/{id}                     | 撤销访客申请         | string       | 结果代码   |
+| GET    | /applications/{id}/validate/{secret}   | 通行验证            | string       | 结果代码   |
 
 ### 部门（departments）
 
