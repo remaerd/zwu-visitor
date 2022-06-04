@@ -45,8 +45,9 @@
 | POST    | /reviewers/                            | 新建审批人         | string       | 结果代码   |
 | PUT     | /reviewers/{id}                        | 更改审批人信息      | string       | 结果代码   |
 | DELETE  | /reviewers/{:reviewerId}               | 删除审批人         | string       | 结果代码   |
-| GET     | /reviewers/{:reviewerId}/applications  | 获得审批人相关的访客 | string       | 结果代码   |
-| GET     | /applications/{id}                     | 获取访问通行证      | object       | 结果代码   |
+| GET     | /reviewers/{:reviewerId}/applications  | 获得审批人相关的访客 | string       | 申请列表   |
+| GET     | /applications/{id}                     | 获取访客通行证      | object       | 通行资格   |
+| GET     | /reviewers/{:reviewerId}/applications/ | 获取审批人通行证    | object       | 通行资格   |
 | POST    | /applications/                         | 添加访客申请       | string       | 结果代码    |
 | PUT     | /applications/{id}/validate            | 审批人审批通行资格  | string       | 结果代码    |
 | DELETE  | /applications/{id}                     | 撤销访客申请       | string       | 结果代码    |
