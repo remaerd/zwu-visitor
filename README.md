@@ -9,12 +9,14 @@
 每个小组将由 6 人组成，
 
 ## 关于 REST API 的使用办法
- 在制作前端应用时，会用到以下的后端接口。如果在开发过程中需要用到一些新的后端接口，请直接联系 @remaerd 或 @2016WUJI01 来实现对应的功能。
- 
+
+在制作前端应用时，会用到以下的后端接口。如果在开发过程中需要用到一些新的后端接口，请直接联系 @remaerd 或 @2016WUJI01 来实现对应的功能。
+
 ## 关于 REST API 的使用办法
 
 ### API List
 
+<<<<<<< Updated upstream
 | 方式     | 接口地址                                | 功能描述          | 接口返回类型   | 接口返回值  |
 | ------- | -------------------------------------- | ---------------- | ------------ | --------- |
 | POST    | /departments/                          | 创建新部门         | array        | 部门列表   |
@@ -30,8 +32,25 @@
 | POST    | /applications/                         | 添加访客申请       | string       | 结果代码    |
 | PUT     | /applications/{id}/validate            | 审批人审批通行资格  | string       | 结果代码    |
 | DELETE  | /applications/{id}                     | 撤销访客申请       | string       | 结果代码    |
+=======
+| 方式   | 接口地址                               | 功能描述             | 接口返回类型 | 接口返回值 |
+| ------ | -------------------------------------- | -------------------- | ------------ | ---------- |
+| POST   | /departments/                          | 创建新部门           | array        | 部门列表   |
+| PUT    | /departments/{:departmentId}           | 更新部门信息         | string       | 结果代码   |
+| DELETE | /departments/{:departmentId}           | 删除部门             | string       | 结果代码   |
+| GET    | /departments/{:departmentId}/reviewers | 获取部门的审批人     | array        | 审批人列表 |
+| POST   | /reviewers/                            | 新建审批人           | string       | 结果代码   |
+| PUT    | /reviewers/{id}                        | 更改审批人信息       | string       | 结果代码   |
+| DELETE | /reviewers/{:reviewerId}               | 删除审批人           | string       | 结果代码   |
+| GET    | /reviewers/{:reviewerId}/applications  | 获得审批人相关的访客 | string       | 申请列表   |
+| GET    | /applications/{id}                     | 获取访客通行证       | object       | 通行资格   |
+| GET    | /reviewers/{:reviewerId}/applications/ | 获取审批人通行证     | object       | 通行资格   |
+| POST   | /applications/                         | 添加访客申请         | string       | 结果代码   |
+| PUT    | /applications/{id}/validate            | 审批人审批通行资格   | string       | 结果代码   |
+| DELETE | /applications/{id}                     | 撤销访客申请         | string       | 结果代码   |
+>>>>>>> Stashed changes
 
-### 部门
+### 部门（departments）
 
 ```javascript
 {
@@ -43,7 +62,7 @@
 }
 ```
 
-### 审批人
+### 审批人（reviewers）
 
 ```javascript
 {
@@ -59,10 +78,10 @@
 }
 ```
 
-### 访客申请
+### 访客申请（applications）
 
 ```javascript
-{ 
+{
   "reviewerId": 20220531001, // 审批人 ID
   "status": 0, // 审批状态
   "visitorName":"张三", // 名字
