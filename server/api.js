@@ -23,7 +23,19 @@ module.exports = {
     })
   },
   addDepartment: (req, res, next) => {
-    connection.query(sqlMap.addDepartment, [req.body.name, req.body.campus], (err, result) => {
+    connection.query(sqlMap.addDepartment, [req.query.name, req.query.campus], (err, result) => {
+      if (err) {
+        console.log(err);
+        return;
+      }
+      res.json({
+        code: 200,
+        data: result
+      })
+    })
+  },
+  updateDepartment: (req, res, next) => {
+    connection.query(sqlMap.updateDepartment, [req.query.name, req.query.campus, req.params.id], (err, result) => {
       if (err) {
         console.log(err);
         return;
