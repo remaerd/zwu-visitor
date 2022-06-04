@@ -12,7 +12,7 @@ module.exports = {
   //department
   getDepartment: (req, res, next) => {
     const body = req.body;
-    connection.query(sqlMap.getDepartment, [body.departmentId], (err, result) => {
+    connection.query(sqlMap.getDepartment, [body.id], (err, result) => {
       if (err) {
         console.log(err);
         return;
