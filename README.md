@@ -6,33 +6,12 @@
 
 ## 关于分组介绍
 
+每个小组将由 6 人组成，
+
 ## 关于 REST API 的使用办法
-
-(劳烦嘉顺帮我想一下 REST API 接口的设计，我这边考虑一下课程的设置并给你们准备后端服务器环境)
-
-## API
-
-### API 通用返回
-
-```
-{
-"code":"001",
-"content":"",
-"result":{
-  "id":20220531001,
-  "name":"张三",
-  "gender":"男",
-  "tel":13800000000,
-  "IdNumber":"331081200012120059",
-  "startTime":"2022-05-31 08:00:00",
-  "endTime":"2022-06-01 18:00:00",
-  "campus":"钱湖校区",
-  "unit":"浙江万里学院",
-  "vechile":ture,
-  "numberPlate":"浙BBB111"
-  }
-}
-```
+ 在制作前端应用时，会用到以下的后端接口。如果在开发过程中需要用到一些新的后端接口，请直接联系 @remaerd 或 @2016WUJI01 来实现对应的功能。
+ 
+## 关于 REST API 的使用办法
 
 ### API List
 
@@ -51,3 +30,44 @@
 | POST    | /applications/                         | 添加访客申请       | string       | 结果代码    |
 | PUT     | /applications/{id}/validate            | 审批人审批通行资格  | string       | 结果代码    |
 | DELETE  | /applications/{id}                     | 撤销访客申请       | string       | 结果代码    |
+
+### 部门
+
+```javascript
+{
+  "id":001, // 部门 ID
+  "name":"中德设计与传播学院", // 部门名称
+  "campus":"钱湖校区", // 部门名称
+  "startTime":"2022-05-31 08:00:00",
+  "endTime":"2022-06-01 18:00:00"
+}
+```
+
+### 审批人
+
+```javascript
+{
+  "id":20220531001, // 工号，学生 ID
+  "departmentId": 001, // 部门 ID
+  "status":1, // 状态
+  "name":"张三", // 姓名
+  "tel":13800000000, // 联系
+  "IdNumber":"331081200012120059", // 身份证
+  "vehicleNumber":“浙BBB111”
+}
+```
+
+### 部门
+
+```javascript
+{ 
+  "reviewerId": 20220531001, // 审批人 ID
+  "status": 0, // 审批状态
+  "visitorName":"张三", // 名字
+  "visitorTel":13800000000, // 联系号码
+  "visitorIdNumber":"331081200012120059", // 身份证 ID
+  "startTime":"2022-05-31 08:00:00", // 访问开始时间
+  "endTime":"2022-06-01 18:00:00", // 访问结束时间
+  "vehicleNumber":“浙BBB111”
+}
+```
