@@ -31,7 +31,7 @@
 | POST   | /applications/                         | 添加访客申请         | string       | 结果代码   |
 | PUT    | /applications/{id}/review              | 审批人审批通行资格   | string       | 结果代码   |
 | DELETE | /applications/{id}                     | 撤销访客申请         | string       | 结果代码   |
-| GET    | /applications/{id}/validate/{secret}   | 通行验证            | string       | 结果代码   |
+| GET    | /applications/{id}/validate/{secret}   | 通行验证             | string       | 结果代码   |
 
 ### 部门（departments）
 
@@ -47,15 +47,14 @@
 
 ```javascript
 {
-  "id":20220531001, // 工号，学生 ID
+  "id":2022051001, // 工号，学生 ID
   "departmentId": 001, // 部门 ID
-  "status":1, // 状态，0 是无审批能力，1 是部门审批能力，2 是后勤部审批能力
+  "status":1, // 状态，0 是无审批能力，1 是教学部门审批能力，2 是后勤部门审批能力
   "name":"张三", // 姓名
   "tel":13800000000, // 联系
   "IdNumber":"331081200012120059", // 身份证
+  "vehicleNumber":"浙BBB111",
   "validationSecret":"0b23ac80-1772-4f66-89d5-354e5c2e0898", // 用于生成访客二维码的 UUID
-  "vehicleNumber":“浙BBB111”
-
 }
 ```
 
@@ -63,14 +62,15 @@
 
 ```javascript
 {
-  "reviewerId": 20220531001, // 审批人 ID
+  "id":1,
+  "reviewerId": 2022051001, // 审批人 ID
   "status": 0, // 审批状态，0 是未审批，1 是第一审批人通过，2 是第一审批人失败，3 是第二审批人通过，4 时第二审批人失败
   "visitorName":"张三", // 名字
   "visitorTel":13800000000, // 联系号码
   "visitorIdNumber":"331081200012120059", // 身份证 ID
   "startTime":"2022-05-31 08:00:00", // 访问开始时间
   "endTime":"2022-06-01 18:00:00", // 访问结束时间
-  "vehicleNumber":“浙BBB111”
+  "vehicleNumber":"浙BBB111"
   "validationSecret":"0b23ac80-1772-4f66-89d5-354e5c2e0898", // 用于生成访客二维码的 UUID
 }
 ```
