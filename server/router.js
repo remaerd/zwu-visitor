@@ -7,15 +7,15 @@ const api = require('./api');
 router.get('/departments/:id', (req, res, next) => {
   api.getDepartment(req, res, next);
 });
-router.post('/departments', (req, res, next) => {
-  api.addDepartment(req, res, next);
-});
-router.put('/departments/:id', (req, res, next) => {
-  api.updateDepartment(req, res, next);
-});
-router.delete('/departments/:id', (req, res, next) => {
-  api.deleteDepartment(req, res, next);
-});
+// router.post('/departments', (req, res, next) => {
+//   api.addDepartment(req, res, next);
+// });
+// router.put('/departments/:id', (req, res, next) => {
+//   api.updateDepartment(req, res, next);
+// });
+// router.delete('/departments/:id', (req, res, next) => {
+//   api.deleteDepartment(req, res, next);
+// });
 
 
 
