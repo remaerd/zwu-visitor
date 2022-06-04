@@ -1,4 +1,4 @@
 const sqlMap = {
-    getAllApplicationById: `SELECT * from applications`,
-  }
-  module.exports = sqlMap;
+  getDepartment: 'select * from reviewers where departmentId = ?',
+}
+module.exports = sqlMap;

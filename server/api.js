@@ -9,20 +9,57 @@ const connection = mysql.createConnection(dbConfig)
 
 //
 module.exports = {
-  //getAllApplicationById
-  getAllApplicationById: function (req, res, next) {
-    connection.connect();
-    let querySql = sqlMap.getAllApplicationById;
-    connection.query(querySql, function(err,result){
-      if(err){
-        console.log('error');
-      } else{
-        let data;
-        if(result.length) {
-          data = result;
-        }
-        res.send(data);
+  //department
+  getDepartment: (req, res, next) => {
+    const body = req.body;
+    connection.query(sqlMap.getDepartment, [body.departmentId], (err, result) => {
+      if (err) {
+        console.log(err);
+        return;
       }
+      res.json({
+        code: 200,
+        data: result
+      })
+    })
+  },
+  addDepartment: (req, res, next) => {
+    const body = req.body;
+    connection.query(sqlMap.addDepartment, [body.name], (err, result) => {
+      if (err) {
+        console.log(err);
+        return;
+      }
+      res.json({
+        code: 200,
+        data: result
+      })
+    })
+  },
+  updateDepartment: (req, res, next) => {
+    const body = req.body;
+    connection.query(sqlMap.updateDepartment, [body.name, body.id], (err, result) => {
+      if (err) {
+        console.log(err);
+        return;
+      }
+      res.json({
+        code: 200,
+        data: result
+      })
+    })
+  },
+  deleteDepartment: (req, res, next) => {
+    const body = req.body;
+    connection.query(sqlMap.deleteDepartment, [body.id], (err, result) => {
+      if (err) {
+        console.log(err);
+        return;
+      }
+      res.json({
+        code: 200,
+        data: result
+      })
     })
   }
 };
