@@ -21,30 +21,32 @@
 "result":{
   "id":20220531001,
   "name":"张三",
-  "sex":"男",
+  "gender":"男",
   "tel":13800000000,
   "IdNumber":"331081200012120059",
   "startTime":"2022-05-31 08:00:00",
   "endTime":"2022-06-01 18:00:00",
   "campus":"钱湖校区",
   "unit":"浙江万里学院",
-  "havenCar":"有",
-  "numberPlate":"浙BBB111",
-  "carColor":"黑色"
+  "vechile":ture,
+  "numberPlate":"浙BBB111"
   }
 }
 ```
 
 ### API List
 
-| 方式     | 接口地址                               | 功能描述          | 接口返回类型   | 接口返回值        |
-| ------- | ------------------------------------- | ---------------- | ------------ | --------------- |
-| GET     | /reviewers/{:departmentId}            | 获取审批人         | array        | 审批人列表       |
-| POST    | /reviewers/                           | 新建审批人         | string       | 结果代码         |
-| PUT     | /reviewers/{id}                       | 更改审批人         | string       | 结果代码         |
-| DELETE  | /reviewers/{:reviewerId}              | 删除审批人         | string       | 结果代码         |
-| GET     | /reviewers/{:reviewerId}/applications | 获得审批人相关的访客 | string       | 结果代码         |
-| POST    | /applications/                        | 添加访客申请       | string       | code            |
-| DELETE  | /applications/{id}                    | 撤销访客申请       | string       | code            |
-| PUT     | /applications/{id}                    | 修改访客申请       | string       | code            |
-| GET     | /applications/{id}/validate           | 搜索访客申请       | list         | applicationList |
+| 方式     | 接口地址                                | 功能描述          | 接口返回类型   | 接口返回值  |
+| ------- | -------------------------------------- | ---------------- | ------------ | --------- |
+| POST    | /departments/                          | 创建新部门         | array        | 部门列表   |
+| PUT     | /departments/{:departmentId}           | 更新部门信息       | string       | 结果代码   |
+| DELETE  | /departments/{:departmentId}           | 删除部门          | string        | 结果代码  |
+| GET     | /departments/{:departmentId}/reviewers | 获取部门的审批人    | array        | 审批人列表 |
+| POST    | /reviewers/                            | 新建审批人         | string       | 结果代码   |
+| PUT     | /reviewers/{id}                        | 更改审批人信息      | string       | 结果代码   |
+| DELETE  | /reviewers/{:reviewerId}               | 删除审批人         | string       | 结果代码   |
+| GET     | /reviewers/{:reviewerId}/applications  | 获得审批人相关的访客 | string       | 结果代码   |
+| GET     | /applications/{id}                     | 获取访问通行证      | object       | 结果代码   |
+| POST    | /applications/                         | 添加访客申请       | string       | 结果代码    |
+| PUT     | /applications/{id}/validate            | 审批人审批通行资格  | string       | 结果代码    |
+| DELETE  | /applications/{id}                     | 撤销访客申请       | string       | 结果代码    |
