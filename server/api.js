@@ -45,5 +45,17 @@ module.exports = {
         data: result
       })
     })
+  },
+  deleteDepartment: (req, res, next) => {
+    connection.query(sqlMap.deleteDepartment, req.params.id, (err, result) => {
+      if (err) {
+        console.log(err);
+        return;
+      }
+      res.json({
+        code: 200,
+        data: result
+      })
+    })
   }
 };
