@@ -13,7 +13,7 @@ const sqlMap = {
   addApplication:
     "insert into applications(reviewerId,status,visitorName,visitorTel,visitorIdNumber,startTime,endTime,vehicleNumber,validationSecret) values (?,?,?,?,?,?,?,?,?)",
   updateApplication:
-    "update applications set reviewerId = ?,status = ?,visitorName = ?,visitorTel = ?,visitorNumber = ?,startTime = ?,endTime = ?,vehicleNumber = ?,validationSecret = ? where id = ?",
+    "update applications set reviewerId = ?,status = ?,visitorName = ?,visitorTel = ?,visitorIdNumber = ?,startTime = ?,endTime = ?,vehicleNumber = ?,validationSecret = ? where id = ?",
   deleteApplication: "delete from applications where id = ?",
 };
 module.exports = sqlMap;
