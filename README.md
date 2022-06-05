@@ -22,10 +22,10 @@
 | PUT    | /departments/{:departmentId}         | 更新部门信息         | string       | 结果代码   | - [x] |
 | DELETE | /departments/{:departmentId}         | 删除部门             | string       | 结果代码   | - [x] |
 | GET    | /departments/{:departmentId}         | 获取部门的审批人     | array        | 审批人列表 | - [x] |
-| POST   | /reviewers/                          | 新建审批人           | string       | 结果代码   | - [ ] |
-| PUT    | /reviewers/{:id}                     | 更改审批人信息       | string       | 结果代码   | - [ ] |
-| DELETE | /reviewers/{:id}                     | 删除审批人           | string       | 结果代码   | - [ ] |
-| GET    | /reviewers/{:id}                     | 获得审批人相关的访客 | string       | 申请列表   | - [ ] |
+| POST   | /reviewers/                          | 新建审批人           | string       | 结果代码   | - [x] |
+| PUT    | /reviewers/{:id}                     | 更改审批人信息       | string       | 结果代码   | - [x] |
+| DELETE | /reviewers/{:id}                     | 删除审批人           | string       | 结果代码   | - [x] |
+| GET    | /reviewers/{:id}                     | 获得审批人相关的访客 | string       | 申请列表   | - [x] |
 | POST   | /applications/                       | 添加访客申请         | string       | 结果代码   | - [ ] |
 | PUT    | /applications/{id}                   | 修改访客申请信息     | string       | 结果代码   | - [ ] |
 | DELETE | /applications/{id}                   | 撤销访客申请         | string       | 结果代码   | - [ ] |
