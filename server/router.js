@@ -31,4 +31,18 @@ router.get("/reviewers/:id", (req, res, next) => {
   api.getReviewer(req, res, next);
 });
 
+//applications
+router.post("/applications", (req, res, next) => {
+  api.addApplication(req, res, next);
+});
+router.put("/applications/:id", (req, res, next) => {
+  api.updateApplication(req, res, next);
+});
+router.delete("/applications/:id", (req, res, next) => {
+  api.deleteApplication(req, res, next);
+});
+router.get("/applications/:id", (req, res, next) => {
+  api.getApplication(req, res, next);
+});
+
 module.exports = router;

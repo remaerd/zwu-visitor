@@ -9,5 +9,11 @@ const sqlMap = {
   updateReviewer:
     "update reviewers set departmentId = ?,status = ?,name = ?,tel = ?,IdNumber = ?,vehicleNumber = ?,validationSecret = ? where id = ?",
   deleteReviewer: "delete from reviewers where id = ?",
+  getApplication: "select * from applications where id = ?",
+  addApplication:
+    "insert into applications(reviewerId,status,visitorName,visitorTel,visitorNumber,startTime,endTime,vehicleNumber,validationSecret) values (?,?,?,?,?,?,?,?,?)",
+  updateApplication:
+    "update applications set reviewerId = ?,status = ?,visitorName = ?,visitorTel = ?,visitorNumber = ?,startTime = ?,endTime = ?,vehicleNumber = ?,validationSecret = ? where id = ?",
+  deleteApplication: "delete from applications where id = ?",
 };
 module.exports = sqlMap;

@@ -140,4 +140,82 @@ module.exports = {
       });
     });
   },
+  //applications
+  addApplication: (req, res, next) => {
+    connection.query(
+      sqlMap.addApplication,
+      [
+        req.query.reviewerId,
+        req.query.status,
+        req.query.visitorName,
+        req.query.visitorTel,
+        req.query.visitorNumber,
+        req.query.startTime,
+        req.query.endTime,
+        req.query.vehicleNumber,
+        req.query.validationSecret,
+      ],
+      (err, result) => {
+        if (err) {
+          console.log(err);
+          return;
+        }
+        res.json({
+          code: 200,
+          data: result,
+        });
+      }
+    );
+  },
+  updateApplication: (req, res, next) => {
+    connection.query(
+      sqlMap.updateApplication,
+      [
+        req.query.reviewerId,
+        req.query.status,
+        req.query.visitorName,
+        req.query.visitorTel,
+        req.query.visitorNumber,
+        req.query.startTime,
+        req.query.endTime,
+        req.query.vehicleNumber,
+        req.query.validationSecret,
+        req.params.id,
+      ],
+      (err, result) => {
+        if (err) {
+          console.log(err);
+          return;
+        }
+        res.json({
+          code: 200,
+          data: result,
+        });
+      }
+    );
+  },
+  deleteApplication: (req, res, next) => {
+    connection.query(sqlMap.deleteApplication, req.params.id, (err, result) => {
+      if (err) {
+        console.log(err);
+        return;
+      }
+      res.json({
+        code: 200,
+        data: result,
+      });
+    });
+  },
+  getApplication: (req, res, next) => {
+    connection.query(sqlMap.getApplication, req.params.id, (err, result) => {
+      if (err) {
+        console.log(err);
+        return;
+      }
+      res.json({
+        code: 200,
+        data: result,
+      });
+    });
+  },
 };
