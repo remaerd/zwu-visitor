@@ -27,9 +27,9 @@
 | DELETE | /reviewers/{:id}                     | 删除审批人           | string       | 结果代码   | - [x] |
 | GET    | /reviewers/{:id}                     | 获得审批人相关的访客 | string       | 申请列表   | - [x] |
 | POST   | /applications/                       | 添加访客申请         | string       | 结果代码   | - [x] |
-| PUT    | /applications/{id}                   | 修改访客申请信息     | string       | 结果代码   | - [x] |
-| DELETE | /applications/{id}                   | 撤销访客申请         | string       | 结果代码   | - [x] |
-| GET    | /applications/{id}                   | 获取访客申请信息     | object       | 通行资格   | - [x] |
+| PUT    | /applications/{:id}                   | 修改访客申请信息     | string       | 结果代码   | - [x] |
+| DELETE | /applications/{:id}                   | 撤销访客申请         | string       | 结果代码   | - [x] |
+| GET    | /applications/{:id}                   | 获取访客申请信息     | object       | 通行资格   | - [x] |
 | GET    | /applications/{id}/validate/{secret} | 通行验证             | string       | 结果代码   | - [ ] |
 
 ### 部门（departments）
