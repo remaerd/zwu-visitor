@@ -1,50 +1,46 @@
 //const mysql
-const mysql = require('mysql');
+const mysql = require("mysql");
 //const dbConfig
-const dbConfig = require('./db');
+const dbConfig = require("./db");
 //const sqlMap
-const sqlMap = require('./sqlMap');
+const sqlMap = require("./sqlMap");
 //const connection
-const connection = mysql.createConnection(dbConfig)
+const connection = mysql.createConnection(dbConfig);
 
 //
 module.exports = {
   //department
-  getDepartment: (req, res, next) => {
-    connection.query(sqlMap.getDepartment, req.params.id, (err, result) => {
-      if (err) {
-        console.log(err);
-        return;
-      }
-      res.json({
-        code: 200,
-        data: result
-      })
-    })
-  },
   addDepartment: (req, res, next) => {
-    connection.query(sqlMap.addDepartment, [req.query.name, req.query.campus], (err, result) => {
-      if (err) {
-        console.log(err);
-        return;
+    connection.query(
+      sqlMap.addDepartment,
+      [req.query.name, req.query.campus],
+      (err, result) => {
+        if (err) {
+          console.log(err);
+          return;
+        }
+        res.json({
+          code: 200,
+          data: result,
+        });
       }
-      res.json({
-        code: 200,
-        data: result
-      })
-    })
+    );
   },
   updateDepartment: (req, res, next) => {
-    connection.query(sqlMap.updateDepartment, [req.query.name, req.query.campus, req.params.id], (err, result) => {
-      if (err) {
-        console.log(err);
-        return;
+    connection.query(
+      sqlMap.updateDepartment,
+      [req.query.name, req.query.campus, req.params.id],
+      (err, result) => {
+        if (err) {
+          console.log(err);
+          return;
+        }
+        res.json({
+          code: 200,
+          data: result,
+        });
       }
-      res.json({
-        code: 200,
-        data: result
-      })
-    })
+    );
   },
   deleteDepartment: (req, res, next) => {
     connection.query(sqlMap.deleteDepartment, req.params.id, (err, result) => {
@@ -54,8 +50,94 @@ module.exports = {
       }
       res.json({
         code: 200,
-        data: result
-      })
-    })
-  }
+        data: result,
+      });
+    });
+  },
+  getDepartment: (req, res, next) => {
+    connection.query(sqlMap.getDepartment, req.params.id, (err, result) => {
+      if (err) {
+        console.log(err);
+        return;
+      }
+      res.json({
+        code: 200,
+        data: result,
+      });
+    });
+  },
+  //reviewers
+  addReviewer: (req, res, next) => {
+    connection.query(
+      sqlMap.addReviewer,
+      [
+        req.query.departmentId,
+        req.query.status,
+        req.query.name,
+        req.query.tel,
+        req.query.IdNumber,
+        req.query.vehicleNumber,
+        req.query.validationSecret,
+      ],
+      (err, result) => {
+        if (err) {
+          console.log(err);
+          return;
+        }
+        res.json({
+          code: 200,
+          data: result,
+        });
+      }
+    );
+  },
+  updateReviewer: (req, res, next) => {
+    connection.query(
+      sqlMap.updateReviewer,
+      [
+        req.query.departmentId,
+        req.query.status,
+        req.query.name,
+        req.query.tel,
+        req.query.IdNumber,
+        req.query.vehicleNumber,
+        req.query.validationSecret,
+        req.params.id,
+      ],
+      (err, result) => {
+        if (err) {
+          console.log(err);
+          return;
+        }
+        res.json({
+          code: 200,
+          data: result,
+        });
+      }
+    );
+  },
+  deleteReviewer: (req, res, next) => {
+    connection.query(sqlMap.deleteReviewer, req.params.id, (err, result) => {
+      if (err) {
+        console.log(err);
+        return;
+      }
+      res.json({
+        code: 200,
+        data: result,
+      });
+    });
+  },
+  getReviewer: (req, res, next) => {
+    connection.query(sqlMap.getReviewer, req.params.id, (err, result) => {
+      if (err) {
+        console.log(err);
+        return;
+      }
+      res.json({
+        code: 200,
+        data: result,
+      });
+    });
+  },
 };
