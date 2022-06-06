@@ -10,7 +10,8 @@
 
 ## 关于 REST API 的使用办法
 
-在制作前端应用时，会用到以下的后端接口。如果在开发过程中需要用到一些新的后端接口，请直接联系 @remaerd 或 @2016WUJI01 来实现对应的功能。
+1. 在制作前端应用时，会用到以下的后端接口。如果在开发过程中需要用到一些新的后端接口，请直接联系 @remaerd 或 @2016WUJI01 来实现对应的功能。
+2. 如果对于接口有问题可以在项目中提 issue 或者直接联系 @remaerd 或 @2016WUJI01。
 
 ## 关于 REST API 的使用办法
 
@@ -27,9 +28,9 @@
 | DELETE | /reviewers/{:id}                     | 删除审批人           | string       | 结果代码   | - [x] |
 | GET    | /reviewers/{:id}                     | 获得审批人相关的访客 | string       | 申请列表   | - [x] |
 | POST   | /applications/                       | 添加访客申请         | string       | 结果代码   | - [x] |
-| PUT    | /applications/{:id}                   | 修改访客申请信息     | string       | 结果代码   | - [x] |
-| DELETE | /applications/{:id}                   | 撤销访客申请         | string       | 结果代码   | - [x] |
-| GET    | /applications/{:id}                   | 获取访客申请信息     | object       | 通行资格   | - [x] |
+| PUT    | /applications/{:id}                  | 修改访客申请信息     | string       | 结果代码   | - [x] |
+| DELETE | /applications/{:id}                  | 撤销访客申请         | string       | 结果代码   | - [x] |
+| GET    | /applications/{:id}                  | 获取访客申请信息     | object       | 通行资格   | - [x] |
 | GET    | /applications/{id}/validate/{secret} | 通行验证             | string       | 结果代码   | - [ ] |
 
 ### 部门（departments）
