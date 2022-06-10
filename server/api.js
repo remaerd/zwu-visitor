@@ -228,7 +228,7 @@ module.exports = {
   },
   //validate
   validateReviewer: (req, res, next) => {
-    connection.query(sqlMap.validateReviewer, req.query.id, (err, result) => {
+    connection.query(sqlMap.validateReviewer, req.params.id, (err, result) => {
       if (err) {
         console.log(err);
         return;
@@ -242,7 +242,7 @@ module.exports = {
   validateApplication: (req, res, next) => {
     connection.query(
       sqlMap.validateApplication,
-      req.query.id,
+      req.params.id,
       (err, result) => {
         if (err) {
           console.log(err);
