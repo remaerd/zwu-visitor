@@ -226,4 +226,35 @@ module.exports = {
       });
     });
   },
+  //validate
+  validateReviewer: (req, res, next) => {
+    connection.query(sqlMap.validateReviewer, req.query.id, (err, result) => {
+      if (err) {
+        console.log(err);
+        return;
+      }
+      res.json({
+        code: 200,
+        data: result,
+      });
+    });
+  },
+  validateApplication: (req, res, next) => {
+    connection.query(
+      sqlMap.validateApplication,
+      req.query.id,
+      (err, result) => {
+        if (err) {
+          console.log(err);
+          return;
+        }
+        if (result.status == 3) {
+          res.json({
+            code: 200,
+            data: result,
+          });
+        }
+      }
+    );
+  },
 };

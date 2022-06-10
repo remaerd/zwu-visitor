@@ -45,4 +45,12 @@ router.get("/applications/:id", (req, res, next) => {
   api.getApplication(req, res, next);
 });
 
+//Validate
+router.get("/validateReviewer/:id", (req, res, next) => {
+  api.validateReviewer(req, res, next);
+});
+
+router.get("/validateApplication/:id", (req, res, next) => {
+  api.validateApplication(req, res, next);
+});
 module.exports = router;

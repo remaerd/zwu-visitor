@@ -17,21 +17,23 @@
 
 ### API List
 
-| 方式   | 接口地址                             | 功能描述             | 接口返回类型 | 接口返回值 | done  |
-| ------ | ------------------------------------ | -------------------- | ------------ | ---------- | ----- |
-| POST   | /departments/                        | 创建新部门           | array        | 部门列表   | - [x] |
-| PUT    | /departments/{:departmentId}         | 更新部门信息         | string       | 结果代码   | - [x] |
-| DELETE | /departments/{:departmentId}         | 删除部门             | string       | 结果代码   | - [x] |
-| GET    | /departments/{:departmentId}         | 获取部门的审批人     | array        | 审批人列表 | - [x] |
-| POST   | /reviewers/                          | 新建审批人           | string       | 结果代码   | - [x] |
-| PUT    | /reviewers/{:id}                     | 更改审批人信息       | string       | 结果代码   | - [x] |
-| DELETE | /reviewers/{:id}                     | 删除审批人           | string       | 结果代码   | - [x] |
-| GET    | /reviewers/{:id}                     | 获得审批人相关的访客 | string       | 申请列表   | - [x] |
-| POST   | /applications/                       | 添加访客申请         | string       | 结果代码   | - [x] |
-| PUT    | /applications/{:id}                  | 修改访客申请信息     | string       | 结果代码   | - [x] |
-| DELETE | /applications/{:id}                  | 撤销访客申请         | string       | 结果代码   | - [x] |
-| GET    | /applications/{:id}                  | 获取访客申请信息     | object       | 通行资格   | - [x] |
-| GET    | /applications/{id}/validate/{secret} | 通行验证             | string       | 结果代码   | - [ ] |
+| 方式   | 接口地址                     | 功能描述             | 接口返回类型 | 接口返回值 | done  |
+| ------ | ---------------------------- | -------------------- | ------------ | ---------- | ----- |
+| POST   | /departments/                | 创建新部门           | array        | 部门列表   | - [x] |
+| PUT    | /departments/{:departmentId} | 更新部门信息         | string       | 结果代码   | - [x] |
+| DELETE | /departments/{:departmentId} | 删除部门             | string       | 结果代码   | - [x] |
+| GET    | /departments/{:departmentId} | 获取部门的审批人     | array        | 审批人列表 | - [x] |
+| POST   | /reviewers/                  | 新建审批人           | string       | 结果代码   | - [x] |
+| PUT    | /reviewers/{:id}             | 更改审批人信息       | string       | 结果代码   | - [x] |
+| DELETE | /reviewers/{:id}             | 删除审批人           | string       | 结果代码   | - [x] |
+| GET    | /reviewers/{:id}             | 获得审批人相关的访客 | string       | 申请列表   | - [x] |
+| POST   | /applications/               | 添加访客申请         | string       | 结果代码   | - [x] |
+| PUT    | /applications/{:id}          | 修改访客申请信息     | string       | 结果代码   | - [x] |
+| DELETE | /applications/{:id}          | 撤销访客申请         | string       | 结果代码   | - [x] |
+| GET    | /applications/{:id}          | 获取访客申请信息     | object       | 通行资格   | - [x] |
+| GET    | /reviewersValidate/{:id}     | 通行验证             | string       | 结果代码   | - [ ] |
+| GET    | /applicationsValidate/{:id}  | 通行验证             | string       | 结果代码   | - [ ] |
+
 
 ### 部门（departments）
 

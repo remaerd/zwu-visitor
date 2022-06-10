@@ -15,5 +15,6 @@ const sqlMap = {
   updateApplication:
     "update applications set reviewerId = ?,status = ?,visitorName = ?,visitorTel = ?,visitorIdNumber = ?,startTime = ?,endTime = ?,vehicleNumber = ?,validationSecret = ? where id = ?",
   deleteApplication: "delete from applications where id = ?",
+  validateReviewer: "select * from reviewers where id = ?",
 };
 module.exports = sqlMap;
