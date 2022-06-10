@@ -31,8 +31,8 @@
 | PUT    | /applications/{:id}          | 修改访客申请信息     | string       | 结果代码   | - [x] |
 | DELETE | /applications/{:id}          | 撤销访客申请         | string       | 结果代码   | - [x] |
 | GET    | /applications/{:id}          | 获取访客申请信息     | object       | 通行资格   | - [x] |
-| GET    | /reviewersValidate/{:id}     | 通行验证             | string       | 结果代码   | - [ ] |
-| GET    | /applicationsValidate/{:id}  | 通行验证             | string       | 结果代码   | - [ ] |
+| GET    | /validateReviewer/{:id}      | 通行验证             | string       | 结果代码   | - [x] |
+| GET    | /validateApplication/{:id}   | 通行验证             | string       | 结果代码   | - [x] |
 
 
 ### 部门（departments）
