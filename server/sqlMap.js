@@ -1,3 +1,5 @@
+const { validateApplication } = require("./api");
+
 const sqlMap = {
   getDepartment: "select * from reviewers where departmentId = ?",
   addDepartment: "insert into departments(name, campus) values (?, ?)",
@@ -16,5 +18,6 @@ const sqlMap = {
     "update applications set reviewerId = ?,status = ?,visitorName = ?,visitorTel = ?,visitorIdNumber = ?,startTime = ?,endTime = ?,vehicleNumber = ?,validationSecret = ? where id = ?",
   deleteApplication: "delete from applications where id = ?",
   validateReviewer: "select * from reviewers where id = ?",
+  validateApplication: "select * from applications where id = ?",
 };
 module.exports = sqlMap;
