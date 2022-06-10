@@ -248,12 +248,10 @@ module.exports = {
           console.log(err);
           return;
         }
-        if (result.status == 3) {
-          res.json({
-            code: 200,
-            data: result,
-          });
-        }
+        res.json({
+          code: 200,
+          data: result,
+        });
       }
     );
   },
