@@ -6,7 +6,7 @@ const dbConfig = require("./db");
 const sqlMap = require("./sqlMap");
 //const connection
 const connection = mysql.createConnection(dbConfig);
-
+const md5 = require("md5-node");
 //
 module.exports = {
   //department
@@ -77,7 +77,7 @@ module.exports = {
         req.query.tel,
         req.query.IdNumber,
         req.query.vehicleNumber,
-        req.query.validationSecret,
+        md5(req.query.departmentId + req.query.name + req.query.IdNumber),
       ],
       (err, result) => {
         if (err) {
@@ -101,7 +101,7 @@ module.exports = {
         req.query.tel,
         req.query.IdNumber,
         req.query.vehicleNumber,
-        req.query.validationSecret,
+        md5(req.query.departmentId + req.query.name + req.query.IdNumber),
         req.params.id,
       ],
       (err, result) => {
@@ -153,7 +153,11 @@ module.exports = {
         req.query.startTime,
         req.query.endTime,
         req.query.vehicleNumber,
-        req.query.validationSecret,
+        md5(
+          req.query.reviewerId +
+            req.query.visitorName +
+            req.query.visitorIdNumber
+        ),
       ],
       (err, result) => {
         if (err) {
@@ -179,7 +183,11 @@ module.exports = {
         req.query.startTime,
         req.query.endTime,
         req.query.vehicleNumber,
-        req.query.validationSecret,
+        md5(
+          req.query.reviewerId +
+            req.query.visitorName +
+            req.query.visitorIdNumber
+        ),
         req.params.id,
       ],
       (err, result) => {
