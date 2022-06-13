@@ -53,4 +53,15 @@ router.get("/validateReviewer/:id", (req, res, next) => {
 router.get("/validateApplication/:id", (req, res, next) => {
   api.validateApplication(req, res, next);
 });
+
+//all
+router.get("/allApplications", (req, res, next) => {
+  api.getAllApplications(req, res, next);
+});
+router.get("/allDepartments", (req, res, next) => {
+  api.getAllDepartments(req, res, next);
+});
+router.get("/allReviewers", (req, res, next) => {
+  api.getAllReviewers(req, res, next);
+});
 module.exports = router;

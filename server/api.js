@@ -7,6 +7,7 @@ const sqlMap = require("./sqlMap");
 //const connection
 const connection = mysql.createConnection(dbConfig);
 const md5 = require("md5-node");
+const { query } = require("express");
 //
 module.exports = {
   //department
@@ -254,5 +255,42 @@ module.exports = {
         });
       }
     );
+  },
+  //all
+  allApplications: (req, res, next) => {
+    connection.query(sqlMap.allApplications, (err, result) => {
+      if (err) {
+        console.log(err);
+        return;
+      }
+      res.json({
+        code: 200,
+        data: result,
+      });
+    });
+  },
+  allDepartments: (req, res, next) => {
+    connection.query(sqlMap.allDepartments, (err, result) => {
+      if (err) {
+        console.log(err);
+        return;
+      }
+      res.json({
+        code: 200,
+        data: result,
+      });
+    });
+  },
+  allReviewers: (req, res, next) => {
+    connection.query(sqlMap.allReviewers, (err, result) => {
+      if (err) {
+        console.log(err);
+        return;
+      }
+      res.json({
+        code: 200,
+        data: result,
+      });
+    });
   },
 };

@@ -33,6 +33,9 @@
 | GET    | /applications/{:id}          | 获取访客申请信息     | object       | 通行资格   | - [x] |
 | GET    | /validateReviewer/{:id}      | 通行验证             | string       | 结果代码   | - [x] |
 | GET    | /validateApplication/{:id}   | 通行验证             | string       | 结果代码   | - [x] |
+| GET    | /allApplications             | 获取所有访客申请     | array        | 申请列表   | -[]   |
+| GET    | /allDepartments              | 获取所有部门         | array        | 部门列表   | -[]   |
+| GET    | /allReviewers                | 获取所有审批人       | array        | 审批人列表 | -[]   |
 
 
 ### 部门（departments）

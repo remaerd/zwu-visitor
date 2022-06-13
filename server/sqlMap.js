@@ -19,5 +19,8 @@ const sqlMap = {
   deleteApplication: "delete from applications where id = ?",
   validateReviewer: "select * from reviewers where id = ?",
   validateApplication: "select * from applications where id = ?",
+  allApplications: "select * from applications",
+  allDepartments: "select * from departments",
+  allReviewers: "select * from reviewers",
 };
 module.exports = sqlMap;
