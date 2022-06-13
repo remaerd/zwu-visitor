@@ -56,12 +56,12 @@ router.get("/validateApplication/:id", (req, res, next) => {
 
 //all
 router.get("/allApplications", (req, res, next) => {
-  api.getAllApplications(req, res, next);
+  api.AllApplications(req, res, next);
 });
 router.get("/allDepartments", (req, res, next) => {
-  api.getAllDepartments(req, res, next);
+  api.AllDepartments(req, res, next);
 });
 router.get("/allReviewers", (req, res, next) => {
-  api.getAllReviewers(req, res, next);
+  api.AllReviewers(req, res, next);
 });
 module.exports = router;
