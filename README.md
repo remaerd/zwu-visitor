@@ -38,6 +38,16 @@
 | GET    | /allReviewers                | 获取所有审批人       | array        | 审批人列表 | -[x]  |
 
 
+### 数据表
+
+如果你想查看数据变化，可以点击这个链接[zwu-visitor-admin](https://zwu-visitor-admin.netlify.app/#/)。
+
+If you want to see the data changes, you can click this link [zwu-visitor-admin](https://zwu-visitor-admin.netlify.app/#/).
+
+This web's code in my another repository[zwu-visitor-admin
+](https://github.com/2016WUJI01/zwu-visitor-admin)
+
+
 ### 部门（departments）
 
 ```javascript
