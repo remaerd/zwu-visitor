@@ -165,7 +165,6 @@ module.exports = {
           console.log(err);
           return;
         }
-        console.log(result);
         res.json({
           code: 200,
           data: result,
